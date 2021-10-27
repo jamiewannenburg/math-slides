@@ -17,7 +17,7 @@
  * 
  * ------------------------------------------------
  *  modified by: Jamie Wannenburg
- *  source:  http://github.com/jamiewannenburg/mathpresentation/
+ *  source:  http://github.com/jamiewannenburg/math-slides/
  */
 
 /*jshint bitwise:true, curly:true, eqeqeq:true, forin:true, latedef:true, newcap:true,
