@@ -118,6 +118,12 @@ folder. Then run
 
     pandoc --section-divs -t revealjs --template=impress.revealjs -s markup.md -o index_local.html  --mathjax=MathJax/MathJax.js --jquery-url=javascripts/jquery-3.1.1.min.js
 
+# Online talks
+
+* [OBS](https://obsproject.com/download) can be used to switch between slides and camera, and also create a composite with both
+* [Remove background plugin for OBS](https://github.com/royshil/obs-backgroundremoval)
+* [gInk](https://github.com/geovens/gInk/releases/) to draw on the screen with a wacom tablet
+
 # Helpful values
     
 Blue color: `#0000a7ff`
