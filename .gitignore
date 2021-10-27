@@ -9,3 +9,4 @@ MathJax
 *.synctex.gz
 production
 javascripts/jquery*
+Toself.md

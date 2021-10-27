@@ -33,12 +33,6 @@ $if(mathjax)$
 	<script type="text/javascript" src="$mathjaxurl$?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">
 	MathJax.Hub.Config({
-        /*"HTML-CSS" : {
-            availableFonts : ["STIX"],
-            preferredFont : "STIX",
-            webFont : "STIX-Web",
-            imageFont : null
-        },*/
         MatchWebFonts: {
             matchFor: {
               "HTML-CSS": true,
@@ -67,44 +61,6 @@ $if(mathjax)$
       });
     });
 	</script>
-    <!--
-	<script type="text/javascript" src="$mathjaxurl$?config=TeX-AMS-MML_SVG"></script>
-    <script type="text/x-mathjax-config">
-	MathJax.Hub.Config({
-        MatchWebFonts: {
-            matchFor: {
-              "HTML-CSS": true,
-              NativeMML: false,
-              SVG: true
-            }
-        },
-        SVG: {
-            scale: 90,
-            matchFontHeight: false,
-            addMMLclasses: false,
-            styles: {
-                ".MathJax_SVG": {
-                    "vertical-align": "0.1em"
-                },
-            },
-        },
-		tex2jax: {
-			inlineMath: [['$$','$$'], ['\\(','\\)']],
-			displayMath: [ 
-				['$$$$','$$$$'], 
-				//['\[','\]'],
-				['\begin{equation}','\end{equation}'],
-				['\begin{equation*}','\end{equation*}'] 
-			],
-			processEnvironments: true
-		}
-	});
-	</script>
-    <script type="text/javascript" src="javascripts/svg_mathjax.js"></script>
-    <script type="text/javascript">
-        new Svg_MathJax().install();
-    </script>
-    -->
 $endif$
 
 $if(jquery-url)$

@@ -3,42 +3,60 @@
 This repository collects tools and hacks that I have found usefull in making presentations
 about mathematics.
 
-The workflow 
+# The markup.md source file
 
-# Install and dependencies
+The file `markup.md` is the source file for a presentation which exhibits an example each
+functionality that I have required thus far. The intended workflow is to copy/download/clone
+this template repository for every presentation and then modify the `markup.md` file to your needs.
+(One would delete and replace all the images in the `images` directory.)
 
-Install python 3 (typically with anaconda, also python 2 should work for most scripts).
+The `markup.md` source file is written in the [Markdown](https://www.markdownguide.org/basic-syntax/)
+markup language. The same `markup.md` file can used to generate (almost) identical *beamer* and 
+*impress* presentations using the [Pandoc](https://pandoc.org/) document converter.
+Pandoc can parse an [expanded version](https://pandoc.org/MANUAL.html#pandocs-markdown) of markdown.
 
-Install latex.
+The first requirement is therefore to [install pandoc](https://pandoc.org/installing.html).
+You will then be able to use the commandline/terminal to convert the `markup.md` file to
 
-Create svg's using Inkscape.
+1) a beamer latex `.tex` file, using the `impress.latex` pandoc template (e.g. `slides.tex`), and
+2) an impress `.html` file, using the `impress.revealjs` pandoc template (e.g. `index.html`).
 
-And animate them on http://anigen.org/versions/0_8_1/.
-Hints:
+# Images
+
+I use [inkscape](https://inkscape.org) to create images. The reason is that it natively creates SVG
+images which can be animated (see the next section). The downside is that latex can not directly
+include SVGs. Luckely, Inkscape comes with a commandline utility that is able to convert an SVG 
+to a PDF.
+
+	inkscape <SVG-input.svg> --export-filename=<PDF-output.pdf>
+	
+The python script `make_pdfs.py` automatically converts the SVGs to PDFs and replaces them in the latex source (see the *Beamer* section).
+
+Furthermore, to avoid spacing difficulties, SVGs should be the full size of the slide.
+If one needs to create space for an image, either use empty lines or empty columns.
+You can edit `template.svg` as it is the correct size.
+
+# Animations
+
+You can animate SVGs using the online tool [anigen](http://anigen.org/versions/0_8_1/). Hints:
 
 + Close log, in the upper right hand corner, and open the xml tree. 
 + Click on the element or group you want to animate then click the animate button 
 (that looks like a power button turned sideways). 
 + Make sure the animation view is on in the upper right corner (looks like an hour glass).
 + Use + and - to move time. 
-+ CTL+SHIFT+SCROL to scroll.
++ CTL+SHIFT+SCROL to zoom.
++ Save or Export once you are done
 
-# Edit 
+I follow the convension that I create some `filename.svg` using inkscape, and then I save the animated
+version from anigen as `filename-animation.svg`. The `make_pdfs.py` script assumes this convention and
+it will replace an occurence of `filename-animation.svg` with a PDF version (`filename.pdf`) of `filename.svg` in the generated latex file.
 
-Adapt `markup.md` to your needs. First see that the slides work in beamer, 
-then add the braces with data-x and data-y coordinates to position with impress.
+# Beamer
 
-# Create slides
+I typically first create a presentation that looks good in beamer.
 
-Run this to get an impress `index.html` document:
-
-    pandoc --section-divs -t revealjs --template=impress.revealjs -s markup.md -o index.html --mathjax
-
-To run server, cd into talk directory and run:
-
-    python -m http.server 8000
-	
-Then visit http://localhost:8000/. (This is needed to be able to read animated svg's, and trigger their animations in javascript.)
+Install python 3 (typically with [anaconda](https://www.anaconda.com/products/individual), also python 2 should work for most scripts). Install latex.
 
 To make beamer slides:
 
@@ -46,40 +64,70 @@ To make beamer slides:
     pdflatex slides.tex
     pdflatex slides.tex
     
-For talk notes:
+See `python make_pdfs.py -h` for the commandline options. Use `-P` to skip the SVG to PDF conversion and `-L` to run the `pdflatex` commands.
 
-    python make_pdfs.py
+This converts SVGs to PDFs, then creates `slides.tex` by running the command
+
+	pandoc -s markup.md -t beamer --template=impress.latex -o slides.tex
+	
+and then replaces the references to the SVG images in the `.tex` file with the `.pdf` copies and
+forces them to take up the full page.
+
+# Edit 
+
+Adapt `markup.md` to your needs. First see that the slides work in beamer, 
+then add the  to position with impress.
+
+# Impress
+
+Once I am satisfied with the beamer version I create the animations and then position the slides
+to be shown using [impress](https://github.com/impress/impress.js/) in a browser.
+One positions the slides in 2-D space by adding braces with data-x and data-y coordinates to the 
+slide's title in `markup.md`. 
+While positioning the slides it is useful to comment out the first entry in the `stylesheets/app.css` file
+`.impress-enabled .slide.future { opacity: 0 }` so that slides are alyways visible
+
+Run this to get an impress `index.html` document:
+
+    pandoc --section-divs -t revealjs --template=impress.revealjs -s markup.md -o index.html --mathjax
+
+If one opens the `.html` file directly in a browser, one can not see the animations. So, to see the animations one must run simple server. For example, run
+
+    python -m http.server 8000
+	
+Then visit http://localhost:8000/.
+
+# Notes
+
+To extract notes for latex:
+
+    python make_pdfs.py -N
     pandoc notes.md -s -t latex -o notes.tex
     pdflatex notes.tex
     pdflatex notes.tex
     
-Push to production:
+# Production
 
-    pandoc --section-divs -t revealjs --template=impress.revealjs -s markup.md -o index.html --mathjax
+To create a minimal directory that can be served in production run 
+
     python build.py
 	
 Then serve the new `production` folder on your server.
 
-# For myself
+# Local
 
-Then copy to talks website folder (and add to talks rdf) and push that to production.
-    
-To push to server directly:
-
-    pandoc -t revealjs --template=impress.revealjs -s markup.md -o index.html --mathjax
-    python build.py
-    bash
-    rsync -avW --chmod=Du=rwx,Dg=rx,Do=x,Fu=rw,Fog=r --delete-before --progress production/ vps.jamiewannenburg.com:/home/jamie/talk
-    ssh vps.jamiewannenburg.com
-    sudo ./copy_to_apache.sh talk
-    
-To create no intenet version, remember to copy MathJax folder along:
+To create a version that does not require the internet at all, 
+first get a copy of [MathJax](https://docs.mathjax.org/en/v2.7-latest/installation.html) in a folder of
+the same name, and [jquery-3.1.1.min.js](https://releases.jquery.com/jquery/) into the `javascripts` 
+folder. Then run
 
     pandoc --section-divs -t revealjs --template=impress.revealjs -s markup.md -o index_local.html  --mathjax=MathJax/MathJax.js --jquery-url=javascripts/jquery-3.1.1.min.js
+
+# Helpful values
     
 Blue color: `#0000a7ff`
 
-**remember to group paths if you want to scale in anigen**
+You can group paths you want to scale in anigen
 
 At scale 1:
 
@@ -122,7 +170,3 @@ Large	        14pt    | 40px
 LARGE	        17pt    | 48px
 huge	        20pt    | 56px
 Huge	        25pt    | 71px
-
-TODO: In beamer after compile:
-
-2) Lattices lower

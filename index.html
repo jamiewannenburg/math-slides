@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
     <meta name="author" content="J. J. Wannenburg">
-    <title>Epimorphisms in Varieties of Heyting Algebras</title>
+    <title>Title</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -13,12 +13,6 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">
 	MathJax.Hub.Config({
-        /*"HTML-CSS" : {
-            availableFonts : ["STIX"],
-            preferredFont : "STIX",
-            webFont : "STIX-Web",
-            imageFont : null
-        },*/
         MatchWebFonts: {
             matchFor: {
               "HTML-CSS": true,
@@ -47,45 +41,9 @@
       });
     });
 	</script>
-    <!--
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js?config=TeX-AMS-MML_SVG"></script>
-    <script type="text/x-mathjax-config">
-	MathJax.Hub.Config({
-        MatchWebFonts: {
-            matchFor: {
-              "HTML-CSS": true,
-              NativeMML: false,
-              SVG: true
-            }
-        },
-        SVG: {
-            scale: 90,
-            matchFontHeight: false,
-            addMMLclasses: false,
-            styles: {
-                ".MathJax_SVG": {
-                    "vertical-align": "0.1em"
-                },
-            },
-        },
-		tex2jax: {
-			inlineMath: [['$','$'], ['\\(','\\)']],
-			displayMath: [ 
-				['$$','$$'], 
-				//['\[','\]'],
-				['\begin{equation}','\end{equation}'],
-				['\begin{equation*}','\end{equation*}'] 
-			],
-			processEnvironments: true
-		}
-	});
-	</script>
-    <script type="text/javascript" src="javascripts/svg_mathjax.js"></script>
-    <script type="text/javascript">
-        new Svg_MathJax().install();
-    </script>
-    -->
-    <script type="text/javascript" src="javascripts/jquery-3.1.1.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 </head>
 <body>
 <div class="fallback-message">
@@ -94,44 +52,66 @@
 <div id="impress">
 
 <section id="title-slide" class="slide" data-x="-510" data-y="-50" data-scale="2">
-    <h1 class="title">Epimorphisms in Varieties of Heyting Algebras</h1>
-    <h2 class="subtitle">UJ Workshop</h2>
+    <h1 class="title">Title</h1>
+    <h2 class="subtitle">Conference Name</h2>
     <p class="author">J. J. Wannenburg</p>
     <ol type="1" class="institutes">
             <li><p class="institute">Institute of Computer Science, Academy of Sciences of the Czech Republic, Czech Republic</p></li>
         </ol>
-    <p class="date">January 2019</p>
+    <p class="date">Date</p>
     <p><img id="titlegraphic" src="images/EUHorisontal.jpg"/></p>
-<p class="thanks">This project is co-funded by the EU.</p>
+<p class="thanks">This work was carried out within the project <em>Supporting the internationalization of the Institute of Computer Science of the Czech Academy of Sciences</em> (no. CZ.02.2.69/0.0/0.0/18_053/0017594), funded by the Operational Programme Research, Development and Education of the Ministry of Education, Youth and Sports of the Czech Republic. The project is co-funded by the EU.</p>
 </section>
 
 
 
-<section id="test-animation" class="slide level1" data-x="1024" data-y="768" data-scale="1">
-<h1 data-x="1024" data-y="768" data-scale="1">Test Animation</h1>
+<section id="test-animation" class="slide level1" data-x="1024" data-y="-768" data-scale="1">
+<h1 data-x="1024" data-y="-768" data-scale="1">Test Animation</h1>
+<p>When you arrive at the slide,</p>
+<p>the animation is triggered</p>
+<p>(unless you are in beamer)</p>
+<ul>
+<li>This is an itemized list</li>
+<li>To the right is a lattice</li>
+</ul>
+<ol type="1">
+<li>This is an enumerated list</li>
+<li>Use arrows to move between slides</li>
+<li>You can see the previous slide from the next slide</li>
+</ol>
 <p><img data-src="images/LatticeOperations-animation.svg" /></p>
 <aside class="notes">
 <p>Some notes in <em>markdown</em>.</p>
+<p>One can create new lines as above to create space.</p>
+<p>Slides start at the title of # symbol and end at the dashes.</p>
+<p>Note that beamer does not play the animation.</p>
 </aside>
 </section>
-<section id="environments" class="slide level1" data-x="2048" data-y="768" data-scale="1">
-<h1 data-x="2048" data-y="768" data-scale="1">Environments</h1>
+<section id="environments" class="slide level1" data-x="1024" data-y="-250" data-scale="1">
+<h1 data-x="1024" data-y="-250" data-scale="1">Environments</h1>
 <dl>
 <dt>Thm</dt>
-<dd>In the join of the six covers of <span class="math inline">\(\overline{\mathbf{C_4}}\)</span> within <span class="math inline">\(\mathsf{M}\)</span>, every subquasivariety is a variety.
+<dd>In the join of the six covers of <span class="math inline">\(\overline{\mathbf{C_4}}\)</span> within <span class="math inline">\(\mathsf{M}\)</span>, every subquasivariety is a variety.<br />
+<br />
+
 </dd>
-</dl>
-<section id="example" class="level2">
-<h2>Example</h2>
-<dl>
 <dt><span class="math inline">\(p, p \to q \vdash_{\mathbf{R^t}} q\)</span></dt>
-<dd>Suppose that <span class="math inline">\(e \leq p\)</span> and <span class="math inline">\(e \leq p \to q\)</span>. By the law of residuation <span class="math inline">\(p \leq q\)</span>, then <span class="math inline">\(e \leq q\)</span>, by the transitivity of <span class="math inline">\(\leq\)</span>.
+<dd>Suppose that <span class="math inline">\(e \leq p\)</span> and <span class="math inline">\(e \leq p \to q\)</span>. By the law of residuation <span class="math inline">\(p \leq q\)</span>, then <span class="math inline">\(e \leq q\)</span>, by the transitivity of <span class="math inline">\(\leq\)</span>.<br />
+<br />
+
 </dd>
 </dl>
+<section id="thm" class="level2">
+<h2>Thm</h2>
+<p>An alternative that goes with a proof</p>
+<section id="proof" class="level3">
+<h3>Proof</h3>
+<p>It is self evident.</p>
 </section>
 </section>
-<section id="this-slide-has-columns" class="slide level1" data-x="2048" data-y="1540" data-scale="1">
-<h1 data-x="2048" data-y="1540" data-scale="1">This slide has columns</h1>
+</section>
+<section id="this-slide-has-columns" class="slide level1" data-x="1024" data-y="100" data-scale="1">
+<h1 data-x="1024" data-y="100" data-scale="1">This slide has columns</h1>
 <div class="columns">
 <div class="column">
 <p>left</p>
@@ -140,8 +120,8 @@
 </div>
 </div>
 </section>
-<section id="using-full-slide-and-columns" class="slide level1 full-slide" data-x="4200" data-y="1500" data-scale="1">
-<h1 class="full-slide" data-x="4200" data-y="1500" data-scale="1">Using full-slide and columns</h1>
+<section id="using-full-slide-and-columns" class="slide level1 full-slide" data-x="1024" data-y="500" data-scale="1">
+<h1 class="full-slide" data-x="1024" data-y="500" data-scale="1">Using full-slide and columns</h1>
 <div class="columns">
 <div class="column">
 <p>Recall that the Rieger-Nishimura lattice <span class="math inline">\(\mathbf{RN}\)</span> is the one-generated free Heyting algebra depicted below.</p>
@@ -151,98 +131,93 @@
 </div>
 <p><img data-src="images/RN.svg" /></p>
 </section>
-<section id="disappearing-images" class="slide level1 full-slide" data-x="4200" data-y="-350" data-scale="1">
-<h1 class="full-slide" data-x="4200" data-y="-350" data-scale="1">Disappearing images</h1>
+<section id="disappearing-images" class="slide level1 full-slide" data-x="1024" data-y="1200" data-scale="1">
+<h1 class="full-slide" data-x="1024" data-y="1200" data-scale="1">Disappearing images</h1>
 <p><img data-src="images/Xn-1.svg" class="disappear" /></p>
 </section>
-<section id="section" class="slide level1 full-slide unselectable" data-x="4200" data-y="-350" data-scale="1">
-<h1 class="full-slide unselectable" data-x="4200" data-y="-350" data-scale="1"></h1>
+<section id="section" class="slide level1 full-slide unselectable" data-x="1024" data-y="1200" data-scale="1">
+<h1 class="full-slide unselectable" data-x="1024" data-y="1200" data-scale="1"></h1>
 <p><img data-src="images/Xn-2.svg" class="disappear" /></p>
 </section>
-<section id="section-1" class="slide level1 full-slide unselectable" data-x="4200" data-y="-350" data-scale="1">
-<h1 class="full-slide unselectable" data-x="4200" data-y="-350" data-scale="1"></h1>
+<section id="section-1" class="slide level1 full-slide unselectable" data-x="1024" data-y="1200" data-scale="1">
+<h1 class="full-slide unselectable" data-x="1024" data-y="1200" data-scale="1"></h1>
 <p><img data-src="images/Xn.svg" /></p>
 </section>
-<section id="fixed-image" class="slide level1 full-slide" data-x="2050" data-y="5540" data-scale="1">
-<h1 class="full-slide" data-x="2050" data-y="5540" data-scale="1">Fixed image</h1>
+<section id="fixed-image" class="slide level1 full-slide" data-x="2050" data-y="-700" data-scale="1">
+<h1 class="full-slide" data-x="2050" data-y="-700" data-scale="1">Fixed image</h1>
 <div class="columns">
 <div class="column">
-<p>Keeping a ‘fixed’ floating image and creating space</p>
-<p>Let <span class="math inline">\(\mathbf{Y} \in (\mathsf{W}_2)_*\)</span> and <span class="math inline">\(f,g : \mathbf{Y} \rightarrow \mathbf{X}_2^\infty\)</span> <em>different</em> Esakia morphisms such that <span class="math inline">\(\langle f(y), g(y) \rangle \in R\)</span> for every <span class="math inline">\(y \in Y\)</span>.</p>
-<p>One can show that there exists <span class="math inline">\(\bot \in Y\)</span> such that <span class="math inline">\(f(\bot)=\alpha\)</span> and <span class="math inline">\(g(\bot)=\beta\)</span> in some component of <span class="math inline">\(\mathbf{X}_2^\infty\)</span>.</p>
+<p>Keeping a ‘fixed’ floating image.</p>
+<p>Suppose this is a long proof.</p>
+<p>And I want to keep the picture around as I continue with the proof.</p>
 </div><div class="column">
 
 </div>
 </div>
 <p><img data-src="images/X2pinfty-epic-1.svg" class="disappear fixed" /></p>
-<aside class="notes">
-<p>Suppose we have two <em>different</em> homomorphisms from an Esakia space <span class="math inline">\(\mathbf{Y}\)</span> of width 2 into <span class="math inline">\(X_2^{\infty}\)</span>, that agree on the correct partition at every point. One can show that there is an element of <span class="math inline">\(Y\)</span> that get mapped to these positions by <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> in some component of <span class="math inline">\(X_2^{\infty}\)</span>.</p>
-</aside>
 </section>
-<section id="section-2" class="slide level1 full-slide" data-x="2050" data-y="5760" data-scale="1">
-<h1 class="full-slide" data-x="2050" data-y="5760" data-scale="1"></h1>
+<section id="section-2" class="slide level1 full-slide" data-x="2050" data-y="-550" data-scale="1">
+<h1 class="full-slide" data-x="2050" data-y="-550" data-scale="1"></h1>
 <div class="columns">
 <div class="column">
-<div class="space" style="height: 285px">
-
-</div>
-<p>We may suppose w.l.o.g. that <span class="math inline">\(Y = {\uparrow}\bot\)</span>.</p>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<p>And do one more step.</p>
+<p>And do one more step.</p>
+<p>And do one more step.</p>
 </div><div class="column">
 
 </div>
 </div>
 <p><img data-src="images/X2pinfty-epic-2.svg" class="disappear fixed" /></p>
-<aside class="notes">
-<p>We may take <span class="math inline">\(Y = {\uparrow}\bot\)</span>.</p>
-</aside>
 </section>
-<section id="section-3" class="slide level1 full-slide" data-x="2050" data-y="5970" data-scale="1">
-<h1 class="full-slide" data-x="2050" data-y="5970" data-scale="1"></h1>
+<section id="section-3" class="slide level1 full-slide" data-x="2050" data-y="-450" data-scale="1">
+<h1 class="full-slide" data-x="2050" data-y="-450" data-scale="1"></h1>
 <div class="columns">
 <div class="column">
-<div class="space" style="height: 150px">
-
-</div>
-<p>By the Lemma, there is a subposet <span class="math inline">\(Z \subseteq Y\)</span> such that the restriction <span class="math display">\[ f: Z \rightarrow {\uparrow} \alpha \setminus \{\top\} \]</span> is a poset isomorphism.</p>
-<p>We label every element of <span class="math inline">\(Z\)</span> as the ‘prime’ of its copy under <span class="math inline">\(f\)</span> in <span class="math inline">\(X\)</span>.</p>
-<p>We can show that for <span class="math inline">\(x&#39; \in Z\)</span> <span class="math display">\[g(x&#39;) = \max(x/R).\]</span></p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p>And do one more step.</p>
+<p>And do one more step.</p>
+<p>And do one more step.</p>
 </div><div class="column">
 
 </div>
 </div>
 <p><img data-src="images/X2pinfty-epic-3-animation.svg" class="disappear fixed" /></p>
-<aside class="notes">
-<p>By the Lemma, there is a subposet <span class="math inline">\(Z\)</span> of <span class="math inline">\(Y\)</span> that is isomorphically mapped by <span class="math inline">\(f\)</span> onto <span class="math inline">\(\mathbf{X}_n^\infty \setminus \{\top\}\)</span>. We label these elements using primes.</p>
-<p>We can prove that <span class="math inline">\(g\)</span> sends every element of this poset to the maximum of its corresponding equivalence class.</p>
-</aside>
 </section>
-<section id="section-4" class="slide level1 full-slide" data-x="2050" data-y="6540" data-scale="1">
-<h1 class="full-slide" data-x="2050" data-y="6540" data-scale="1"></h1>
+<section id="section-4" class="slide level1 full-slide" data-x="2050" data-y="-300" data-scale="1">
+<h1 class="full-slide" data-x="2050" data-y="-300" data-scale="1"></h1>
 <div class="columns">
 <div class="column">
-<div class="space" style="height: 150px">
-
-</div>
-<p>Since <span class="math inline">\(g(\bot) = \beta \leq c\)</span>, there exists <span class="math inline">\(y \in Y\)</span> such that <span class="math inline">\(g(y) = c\)</span>.</p>
-<p>Since <span class="math inline">\(c\)</span> is incomparable with <span class="math inline">\(d=g(b&#39;)\)</span>, we have <span class="math inline">\(y\)</span> incomparable with <span class="math inline">\(b&#39;\)</span>.</p>
-<p>Then <span class="math inline">\(y\)</span> is comparable with <span class="math inline">\(a&#39;\)</span>, since <span class="math inline">\(\mathbf{Y}\)</span> has width <span class="math inline">\(\leq 2\)</span>.</p>
-<p>But then, <span class="math inline">\(g(y) = c\)</span> is comparable with <span class="math inline">\(g(a&#39;) = a\)</span>.</p>
-<p>From this contradiction it follows that <span class="math inline">\(f = g\)</span>.</p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p>And do one more step.</p>
+<p>And do one more step.</p>
+<p>And do one more step.</p>
 </div><div class="column">
 
 </div>
 </div>
-<p><img data-src="images/X2pinfty-epic-4.svg" class="disappear fixed" /></p>
+<p><img data-src="images/X2pinfty-epic-4.svg" /></p>
 <aside class="notes">
-<p>Since <span class="math inline">\(g\)</span> sends <span class="math inline">\(\bot\)</span> to <span class="math inline">\(\beta\)</span>, which is below <span class="math inline">\(c\)</span> there is an element <span class="math inline">\(y\)</span> that gets sent to <span class="math inline">\(c\)</span>. Since <span class="math inline">\(c\)</span> is comparable with <span class="math inline">\(d\)</span> in the image, and <span class="math inline">\(g\)</span> is order-presering, <span class="math inline">\(y\)</span> must be incomparable with <span class="math inline">\(b&#39;\)</span>. But then <span class="math inline">\(y\)</span> is comparable with <span class="math inline">\(a&#39;\)</span>, since <span class="math inline">\(Y\)</span> has width 2. So, the images of <span class="math inline">\(y\)</span> and <span class="math inline">\(a&#39;\)</span> under <span class="math inline">\(g\)</span> (i.e., <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span>) must be comparable. Which is clearly false from the picture.</p>
-<p>Therefore <span class="math inline">\(f=g\)</span>.</p>
+<p>Note that creating frames in this way translates well to beamer.</p>
 </aside>
 </section>
-<section id="section-5" class="slide level1 full-slide" data-x="2050" data-y="6540" data-scale="1">
-<h1 class="full-slide" data-x="2050" data-y="6540" data-scale="1"></h1>
-<p><img data-src="images/X2pinfty-epic-4.svg" /></p>
-</section>
-<section id="section-6" class="slide level1 unselectable" data-x="1024" data-y="768" data-scale="5">
+<section id="section-5" class="slide level1 unselectable" data-x="1024" data-y="768" data-scale="5">
 <h1 class="unselectable" data-x="1024" data-y="768" data-scale="5"></h1>
 <p>thank you</p>
 </section>
