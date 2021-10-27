@@ -73,11 +73,6 @@ This converts SVGs to PDFs, then creates `slides.tex` by running the command
 and then replaces the references to the SVG images in the `.tex` file with the `.pdf` copies and
 forces them to take up the full page.
 
-# Edit 
-
-Adapt `markup.md` to your needs. First see that the slides work in beamer, 
-then add the  to position with impress.
-
 # Impress
 
 Once I am satisfied with the beamer version I create the animations and then position the slides
@@ -156,17 +151,17 @@ At scale 1:
 Beamer and impress comparison:
 Beamer pt to px = 2.8332483124999994
 
-                Beamer  | Impress
----------------------------------
-width:          12.8cm  | 1028px
-height:         9.6cm   | 768px
-tiny            6pt     | 17px
-scriptsize	    8pt     | 22px
-footnotesize	10pt    | 28px
-small	        10pt    | 28px
-normalsize	    11pt    | 31px
-large	        12pt    | 34px
-Large	        14pt    | 40px
-LARGE	        17pt    | 48px
-huge	        20pt    | 56px
-Huge	        25pt    | 71px
+                    Beamer  | Impress
+    ---------------------------------
+    width:          12.8cm  | 1028px
+    height:         9.6cm   | 768px
+    tiny            6pt     | 17px
+    scriptsize	    8pt     | 22px
+    footnotesize	10pt    | 28px
+    small	        10pt    | 28px
+    normalsize	    11pt    | 31px
+    large	        12pt    | 34px
+    Large	        14pt    | 40px
+    LARGE	        17pt    | 48px
+    huge	        20pt    | 56px
+    Huge	        25pt    | 71px
