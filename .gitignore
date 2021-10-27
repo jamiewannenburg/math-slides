@@ -1,0 +1,11 @@
+MathJax
+*.pyc
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.synctex.gz
+production
+javascripts/jquery*

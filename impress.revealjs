@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+$for(author-meta)$
+    <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$">
+$endif$
+$if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
+$endif$
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="stylesheets/app.css" rel="stylesheet">
+$if(highlighting-css)$
+    <style type="text/css">
+$highlighting-css$
+    </style>
+$endif$
+$for(css)$
+    <link rel="stylesheet" href="$css$"/>
+$endfor$
+$if(math)$
+    $math$
+$endif$
+    
+$if(mathjax)$
+	<script type="text/javascript" src="$mathjaxurl$?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+        /*"HTML-CSS" : {
+            availableFonts : ["STIX"],
+            preferredFont : "STIX",
+            webFont : "STIX-Web",
+            imageFont : null
+        },*/
+        MatchWebFonts: {
+            matchFor: {
+              "HTML-CSS": true,
+              NativeMML: false,
+            }
+        },
+		tex2jax: {
+			inlineMath: [['$$','$$'], ['\\(','\\)']],
+			displayMath: [ 
+				['$$$$','$$$$'], 
+				['\\[','\\]'],
+				['\\begin{equation}','\\end{equation}'],
+				['\\begin{equation*}','\\end{equation*}'] 
+			],
+			processEnvironments: true
+		}
+	});
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+        var TEX = MathJax.InputJax.TeX;
+        var PREFILTER = TEX.prefilterMath;
+        TEX.Augment({
+            prefilterMath: function (math,displaymode,script) {
+                math = math.replace(/\\text{.*?}/g,"\\style{font-family:inherit;}{$$&}")
+                return PREFILTER.call(TEX,math,displaymode,script);
+            }
+      });
+    });
+	</script>
+    <!--
+	<script type="text/javascript" src="$mathjaxurl$?config=TeX-AMS-MML_SVG"></script>
+    <script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+        MatchWebFonts: {
+            matchFor: {
+              "HTML-CSS": true,
+              NativeMML: false,
+              SVG: true
+            }
+        },
+        SVG: {
+            scale: 90,
+            matchFontHeight: false,
+            addMMLclasses: false,
+            styles: {
+                ".MathJax_SVG": {
+                    "vertical-align": "0.1em"
+                },
+            },
+        },
+		tex2jax: {
+			inlineMath: [['$$','$$'], ['\\(','\\)']],
+			displayMath: [ 
+				['$$$$','$$$$'], 
+				//['\[','\]'],
+				['\begin{equation}','\end{equation}'],
+				['\begin{equation*}','\end{equation*}'] 
+			],
+			processEnvironments: true
+		}
+	});
+	</script>
+    <script type="text/javascript" src="javascripts/svg_mathjax.js"></script>
+    <script type="text/javascript">
+        new Svg_MathJax().install();
+    </script>
+    -->
+$endif$
+
+$if(jquery-url)$
+    <script src="$jquery-url$"></script>
+$else$
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+$endif$
+
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+<div class="fallback-message">
+    <p>This presentation uses javascript. Please enable it or switch to a browser that uses it.</p>
+</div>
+<div id="impress">
+
+$if(title)$
+<section id="$idprefix$title-slide" class="slide" data-x="-510" data-y="-50" data-scale="2">
+    <h1 class="title">$title$</h1>
+$if(subtitle)$
+    <h2 class="subtitle">$subtitle$</h2>
+$endif$
+$if(author)$
+    <p class="author">$for(author)$$author$$sep$ and $endfor$</p>
+$endif$
+$if(institute)$
+    <ol type="1" class="institutes">
+    $for(institute)$
+        <li><p class="institute">$institute$</p></li>
+    $endfor$
+    </ol>
+$endif$
+$if(date)$
+    <p class="date">$date$</p>
+$endif$
+$if(titlegraphic)$
+    <p><img id="titlegraphic" src="$titlegraphic$"/></p>
+$endif$
+$if(logo)$
+    <p><img id="titlegraphic" src="$logo$"/></p>
+$endif$
+$if(thanks)$
+<p class="thanks">$thanks$</p>
+$endif$
+</section>
+$endif$
+$if(toc)$
+<section id="$idprefix$TOC">
+$table-of-contents$
+</section>
+$endif$
+
+
+$if(toc)$
+<section id="$idprefix$TOC">
+$table-of-contents$
+</section>
+$endif$
+
+$body$
+
+
+</div>
+
+<div id="animation-window" class="unselectable">
+    <div>
+        <div id="animation-step">
+            <div class="bottom">
+            </div>
+        </div>
+    </div>
+</div>
+
+$if(impress-url)$
+<script src="$impress-url$"></script>
+$else$
+<script src="javascripts/impress.js"></script>
+$endif$
+
+<script>
+// load (unlazily) the images
+$$('[data-src]').each(function(){
+    var $$resource = $$(this);
+    var $$parent = $$resource.parent()
+    var url = $$resource.data('src')
+    var svg = /.*\.svg/
+    var file = /file:/
+    var $$object = $$('<div class="svg-container"></div>');
+    // add original classes to the svg container (should I add this to the svg itself instead?)
+    $$object.addClass($$resource.attr('class'));
+    if (svg.test(url)) {
+        if (file.test(window.location.href)) {
+            // if I'm serving from a file, my animations hack won't work
+            $$object.append('<object type="text/svg+xml" data="'+url+'"/>');
+            $$parent.replaceWith($$object);
+        } else {
+            // load the svg
+            $$.get(url, function(response,status){
+                if (status != "error") {
+                    // disable animations
+                    var $$svg = $$('svg',response);
+                    $$svg.find('animateTransform').attr('begin','indefinite');
+                    $$svg.find('animate').attr('begin','indefinite');
+                    // replace parent with loaded svg data
+                    $$object.append($$svg.prop('outerHTML').replace('svg:svg','svg'))
+                    $$parent.replaceWith($$object);
+                }
+            });
+        }
+        
+    } else {
+        $$resource.attr('src',url);
+    }
+});
+</script>
+
+<script>
+var api = impress();
+api.init();
+
+// resize animation window function
+function resize(e) {
+    var animation_div = document.getElementById('animation-window');
+    var impress_div = document.getElementById('impress');
+    
+    animation_div.style.position = impress_div.style.position;
+    animation_div.style.transformOrigin = impress_div.style.transformOrigin;
+    animation_div.style.transitionDuration = impress_div.style.transitionDuration;
+    animation_div.style.transitionTimingFunction = impress_div.style.transitionTimingFunction;
+    animation_div.style.transitionDelay = impress_div.style.transitionDelay;
+    animation_div.style.transitionProperty = impress_div.style.transitionProperty;
+    animation_div.style.transitionStyle = impress_div.style.transitionStyle;
+    animation_div.style.top = impress_div.style.top;
+    animation_div.style.left = impress_div.style.left;
+    animation_div.style.transform = impress_div.style.transform;
+    
+    var a_child = animation_div.firstChild.nextSibling;
+    var i_child = impress_div.firstChild;
+    
+    a_child.style.position = i_child.style.position;
+    a_child.style.transformOrigin = i_child.style.transformOrigin;
+    a_child.style.transitionDuration = i_child.style.transitionDuration;
+    a_child.style.transitionTimingFunction = i_child.style.transitionTimingFunction;
+    a_child.style.transitionDelay = i_child.style.transitionDelay;
+    a_child.style.transitionProperty = i_child.style.transitionProperty;
+    a_child.style.transitionStyle = i_child.style.transitionStyle;
+    a_child.style.transform = i_child.style.transform;
+    
+    var my_slide = a_child.firstChild.nextSibling;
+    my_slide.style.transform = e.target.style.transform;
+    my_slide.style.transformStyle = e.target.style.transformStyle;
+    my_slide.style.position = e.target.style.position;
+}
+
+var to_resize = true;
+
+// Rescale animation window at next step when window is resized
+window.addEventListener( "resize", function() {
+    to_resize = true;
+}, false );
+
+// run SVG animations when entering a slide
+
+function animate($$el) {
+    $$el.find('animateTransform').each(function(){
+        this.beginElement();
+    });
+    $$el.find('animate').each(function(){
+        this.beginElement();
+    });
+}
+
+document.addEventListener('impress:stepenter',function(e){
+    if (to_resize) {
+        resize(e);
+        to_resize = false;
+    }
+    // move fixed svg div into #animation-step
+    $$(e.target).find('.fixed').insertBefore($$('#animation-step').find('.bottom').first());
+    // trigger #animation-step animations
+    animate($$('#animation-step'));
+    // trigger remaining (non fixed) animations
+    animate($$(e.target));
+});
+
+document.addEventListener('impress:stepleave',function(e){
+    // move fixed svg div back to step
+    setTimeout( function () {
+        $$('#animation-step').find('.fixed').first().detach().appendTo(e.target);
+    }, 1000);
+});
+
+</script>
+<script id="forExtension">
+</script>
+$for(include-after)$
+$include-after$
+$endfor$
+</body>
+</html>
