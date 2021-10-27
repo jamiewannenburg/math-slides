@@ -1,6 +1,6 @@
 # Tools, scripts and hacks for mathematics presentations
 
-This repository collects tools and hacks that I have found usefull in making presentations
+This repository collects tools and hacks that I have found useful in making presentations
 about mathematics.
 
 # The markup.md source file
