@@ -77,10 +77,10 @@ forces them to take up the full page.
 
 Once I am satisfied with the beamer version I create the animations and then position the slides
 to be shown using [impress](https://github.com/impress/impress.js/) in a browser.
-One positions the slides in 2-D space by adding braces with data-x and data-y coordinates to the 
+One positions the slides in 2-D space by adding braces with `data-x` and `data-y` coordinates to the 
 slide's title in `markup.md`. 
 While positioning the slides it is useful to comment out the first entry in the `stylesheets/app.css` file
-`.impress-enabled .slide.future { opacity: 0 }` so that slides are alyways visible
+`.impress-enabled .slide.future { opacity: 0 }` so that slides are always visible.
 
 Run this to get an impress `index.html` document:
 
@@ -159,15 +159,15 @@ Beamer pt to px = 2.8332483124999994
 
                     Beamer  | Impress
     ---------------------------------
-    width:          12.8cm  | 1028px
-    height:         9.6cm   | 768px
+    width           12.8cm  | 1028px
+    height          9.6cm   | 768px
     tiny            6pt     | 17px
-    scriptsize	    8pt     | 22px
-    footnotesize	10pt    | 28px
-    small	        10pt    | 28px
-    normalsize	    11pt    | 31px
-    large	        12pt    | 34px
-    Large	        14pt    | 40px
-    LARGE	        17pt    | 48px
-    huge	        20pt    | 56px
-    Huge	        25pt    | 71px
+    scriptsize      8pt     | 22px
+    footnotesize    10pt    | 28px
+    small           10pt    | 28px
+    normalsize      11pt    | 31px
+    large           12pt    | 34px
+    Large           14pt    | 40px
+    LARGE           17pt    | 48px
+    huge            20pt    | 56px
+    Huge            25pt    | 71px
