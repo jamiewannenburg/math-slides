@@ -25,11 +25,9 @@ You will then be able to use the commandline/terminal to convert the `markup.md`
 
 I use [inkscape](https://inkscape.org) to create images. The reason is that it natively creates SVG
 images which can be animated (see the next section). The downside is that latex can not directly
-include SVGs. Luckely, Inkscape comes with a commandline utility that is able to convert an SVG 
+include SVGs. Luckily, Inkscape comes with a commandline utility that is able to convert an SVG 
 to a PDF.
 
-	inkscape <SVG-input.svg> --export-filename=<PDF-output.pdf>
-	
 The python script `make_pdfs.py` automatically converts the SVGs to PDFs and replaces them in the latex source (see the *Beamer* section).
 
 Furthermore, to avoid spacing difficulties, SVGs should be the full size of the slide.
@@ -66,11 +64,15 @@ To make beamer slides:
     
 See `python make_pdfs.py -h` for the commandline options. Use `-P` to skip the SVG to PDF conversion and `-L` to run the `pdflatex` commands.
 
-This converts SVGs to PDFs, then creates `slides.tex` by running the command
+This script converts SVGs to PDFs by running
+
+	inkscape <SVG-input.svg> --export-filename=<PDF-output.pdf>
+
+it then creates `slides.tex` by running the command
 
 	pandoc -s markup.md -t beamer --template=impress.latex -o slides.tex
 	
-and then replaces the references to the SVG images in the `.tex` file with the `.pdf` copies and
+and then it replaces the references to the SVG images in the `.tex` file with the created `.pdf` copies and
 forces them to take up the full page.
 
 # Impress
@@ -122,6 +124,7 @@ folder. Then run
 
 * [OBS](https://obsproject.com/download) can be used to switch between slides and camera, and also create a composite with both
 * [Remove background plugin for OBS](https://github.com/royshil/obs-backgroundremoval)
+* Another way to remove the background is with an [Image mask](https://streamshark.io/obs-guide/image-mask) in OBS
 * [gInk](https://github.com/geovens/gInk/releases/) to draw on the screen with a wacom tablet
 
 # Helpful values
