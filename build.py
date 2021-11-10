@@ -24,7 +24,7 @@ for folder in folders:
 shutil.copyfile('favicon.ico', os.path.join(outfolder,'favicon.ico'))
 
 # read markup file
-with open(filename) as f:
+with open(filename, encoding='UTF-8') as f:
     file = f.read()
 
 # copy images from metadata

@@ -10,18 +10,18 @@ import argparse
 
 parser = argparse.ArgumentParser(description='make pdf slides or notes from markdown.')
 
-parser.add_argument('markdown', help='markdown markup', nargs='?', type=argparse.FileType('r'),
+parser.add_argument('markdown', help='markdown markup', nargs='?', type=argparse.FileType('r',encoding='UTF-8'),
                      default='markup.md')
 parser.add_argument('-S', '--slides',
                     help='Compile beamer slides to SLIDES, which defaults to slides.tex', 
                     nargs='?', 
-                    type=argparse.FileType('w'), const='slides.tex', default='slides.tex')
+                    type=argparse.FileType('w',encoding='UTF-8'), const='slides.tex', default='slides.tex')
 parser.add_argument('-N', '--notes', help='Compile notes to NOTES, which defaults to notes.md', 
                     nargs='?', 
-                    type=argparse.FileType('w'), const='notes.md')
+                    type=argparse.FileType('w',encoding='UTF-8'), const='notes.md')
 parser.add_argument('-C', '--clean', 
                     help='Extract note-free markdown to CLEAN', nargs='?', 
-                    type=argparse.FileType('w'), const='markup-clean.md')
+                    type=argparse.FileType('w',encoding='UTF-8'), const='markup-clean.md')
 parser.add_argument('-P', '--no-pdf', help='Stops converting svgs to pdfs (to save time).', action='store_true')
 parser.add_argument('-L', '--latex', help='Run latex on tex files.', action='store_true')
 parser.add_argument('-O', '--open', help='Open pdf files using default program. This forces the --latex option.', action='store_true')
@@ -86,7 +86,7 @@ if args.clean:
 os.system('pandoc -s %s -t beamer --template=impress.latex -o %s'%(args.markdown.name, args.slides.name))
 
 # read tex output
-with open(args.slides.name,'r') as f:
+with open(args.slides.name,'r',encoding='UTF-8') as f:
     tex_file = f.read()
 
 # replace animations
